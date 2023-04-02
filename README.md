@@ -2,13 +2,16 @@
 
 This project describe the labeled-assisted unpaired image-to-image translation framework. The overall architetcire compromises 4 shared weight generator, 4 discriminators, and 2 pre-trained segmentation model.
 
+This projecy is modified from junyanz/pytorch-CycleGAN-and-pix2pix [link: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix]
+
+
 ## Model Architecture Overview
 
 ### Generators
-1. source domain to target domain generator
-2. target domain to source domain generator
-3. source domain to target label domain generator
-4. target domain to source label domain generator
+1. Source domain to target domain generator
+2. Target domain to source domain generator
+3. Source domain to target label domain generator
+4. Target domain to source label domain generator
 
 ### Discriminators
 1. Source domain discriminator
@@ -38,10 +41,18 @@ You should check out the size of A domain images are the same with B domain imag
 
 ```
 ./[your own path]/dataset
-----/trainA   % A domain training set image file [png]
-----/trainB   % B domain training set image file [png]
-----/testA    % A domain testing set image file [png]
-----/testB    % B domain testing set image file [png]
+----/trainA        % A domain training set image file [png]
+----/trainB        % B domain training set image file [png]
+----/trainA_cell   % A domain training set cell nuclei label file [png]
+----/trainB_cell   % B domain training set cell nuclei label file [png]
+----/trainA_layer  % A domain training set skin layers label file [png]
+----/trainB_layer  % B domain training set skin layers label file [png]
+----/testA         % A domain testing set image file [png]
+----/testB         % B domain testing set image file [png]
+----/testA_cell    % A domain testing set cell nuclei label file [png]
+----/testB_cell    % B domain testing set cell nuclei label file [png]
+----/testA_layer   % A domain testing set skin layers label file [png]
+----/testB_layer   % B domain testing set skin layers label file [png]
 ```
 
 ## Model Training
